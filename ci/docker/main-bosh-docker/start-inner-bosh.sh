@@ -3,11 +3,18 @@
 set -eu
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# There is an assumption that this path exists
+# @TODO add fallback for script and allow user input
 bosh_path="${bosh_release_path:-${script_dir}/../../../}"
 bosh_release_path=""
 
+# There is an assumption that this path exists
+# @TODO add fallback for script and allow user input
 src_dir="${script_dir}/../../../"
 
+# There is an assumption that this path exists
+# @TODO add fallback for script and allow user input
 default_stemcell_path="${src_dir}/../stemcell/*.tgz"
 stemcell="${CANDIDATE_STEMCELL_TARBALL_PATH:-$default_stemcell_path}"
 
